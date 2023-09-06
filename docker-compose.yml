@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  server:
+    # image: hassanqadir/food-panda:server-latest
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 4000:4000
+
+  client:
+    # image: hassanqadir/food-panda:client-latest
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+  
